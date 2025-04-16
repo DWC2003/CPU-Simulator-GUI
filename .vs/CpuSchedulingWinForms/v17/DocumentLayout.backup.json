@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|c:\\users\\dwc11\\desktop\\school\\os\\project2\\cpuschedulingwinforms\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|c:\\users\\dwc11\\desktop\\school\\os\\project2\\cpuschedulingwinforms\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|c:\\users\\dwc11\\desktop\\school\\os\\project2\\cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "CpuSchedulingWinForms\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "CpuSchedulingWinForms\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T00:12:10.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Resources.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\Properties\\Resources.Designer.cs",
+              "RelativeDocumentMoniker": "CpuSchedulingWinForms\\Properties\\Resources.Designer.cs",
+              "ToolTip": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\Properties\\Resources.Designer.cs",
+              "RelativeToolTip": "CpuSchedulingWinForms\\Properties\\Resources.Designer.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T00:12:00.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CpuScheduler.cs",
+              "DocumentMoniker": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\CpuScheduler.cs",
+              "RelativeDocumentMoniker": "CpuSchedulingWinForms\\CpuScheduler.cs",
+              "ToolTip": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\CpuScheduler.cs",
+              "RelativeToolTip": "CpuSchedulingWinForms\\CpuScheduler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T00:11:31.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CpuScheduler.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\CpuScheduler.cs",
+              "RelativeDocumentMoniker": "CpuSchedulingWinForms\\CpuScheduler.cs",
+              "ToolTip": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\CpuScheduler.cs [Design]",
+              "RelativeToolTip": "CpuSchedulingWinForms\\CpuScheduler.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T00:07:50.817Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

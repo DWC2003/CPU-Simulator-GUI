@@ -63,6 +63,8 @@
             this.pictureBoxCodeOutput = new System.Windows.Forms.PictureBox();
             this.btnBarcode = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.SRFS = new System.Windows.Forms.Button();
+            this.HHRNbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabSelection.SuspendLayout();
@@ -79,11 +81,11 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.sidePanel);
             this.panel1.Controls.Add(this.btnProductCode);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnCpuScheduler);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnDashBoard);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
@@ -199,8 +201,8 @@
             this.dashBoardTab.Controls.Add(this.label2);
             this.dashBoardTab.Controls.Add(this.btnExit);
             this.dashBoardTab.Controls.Add(this.pictureBox3);
-            this.dashBoardTab.Controls.Add(this.pictureBox4);
             this.dashBoardTab.Controls.Add(this.pictureBox2);
+            this.dashBoardTab.Controls.Add(this.pictureBox4);
             this.dashBoardTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashBoardTab.Location = new System.Drawing.Point(4, 22);
             this.dashBoardTab.Name = "dashBoardTab";
@@ -313,6 +315,8 @@
             this.cpuSchedulerTab.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cpuSchedulerTab.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpuSchedulerTab.BackgroundImage")));
             this.cpuSchedulerTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cpuSchedulerTab.Controls.Add(this.HHRNbtn);
+            this.cpuSchedulerTab.Controls.Add(this.SRFS);
             this.cpuSchedulerTab.Controls.Add(this.btnRoundRobin);
             this.cpuSchedulerTab.Controls.Add(this.restartApp);
             this.cpuSchedulerTab.Controls.Add(this.btnPriority);
@@ -521,13 +525,49 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // SRFS
+            // 
+            this.SRFS.BackColor = System.Drawing.Color.Beige;
+            this.SRFS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SRFS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
+            this.SRFS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SRFS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SRFS.Image = ((System.Drawing.Image)(resources.GetObject("SRFS.Image")));
+            this.SRFS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SRFS.Location = new System.Drawing.Point(63, 344);
+            this.SRFS.Name = "SRFS";
+            this.SRFS.Size = new System.Drawing.Size(84, 45);
+            this.SRFS.TabIndex = 13;
+            this.SRFS.Text = "SRFS";
+            this.SRFS.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SRFS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SRFS.UseVisualStyleBackColor = false;
+            // 
+            // HHRNbtn
+            // 
+            this.HHRNbtn.BackColor = System.Drawing.Color.Beige;
+            this.HHRNbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HHRNbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
+            this.HHRNbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HHRNbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HHRNbtn.Image = ((System.Drawing.Image)(resources.GetObject("HHRNbtn.Image")));
+            this.HHRNbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.HHRNbtn.Location = new System.Drawing.Point(169, 344);
+            this.HHRNbtn.Name = "HHRNbtn";
+            this.HHRNbtn.Size = new System.Drawing.Size(88, 45);
+            this.HHRNbtn.TabIndex = 14;
+            this.HHRNbtn.Text = "HHRN";
+            this.HHRNbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.HHRNbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.HHRNbtn.UseVisualStyleBackColor = false;
+            // 
             // CpuScheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 439);
-            this.Controls.Add(this.tabSelection);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabSelection);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -587,5 +627,7 @@
         private System.Windows.Forms.Button btnRoundRobin;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button SRFS;
+        private System.Windows.Forms.Button HHRNbtn;
     }
 }

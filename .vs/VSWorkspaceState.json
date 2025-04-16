@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CpuSchedulingWinForms",
+    "\\CpuSchedulingWinForms\\bin",
+    "\\CpuSchedulingWinForms\\bin\\Debug",
+    "\\CpuSchedulingWinForms\\bin\\Release",
+    "\\CpuSchedulingWinForms\\obj",
+    "\\CpuSchedulingWinForms\\obj\\Release",
+    "\\_vs",
+    "\\_vs\\CpuSchedulingWinForms",
+    "\\_vs\\CpuSchedulingWinForms\\v15"
   ],
+  "SelectedNode": "\\CpuSchedulingWinForms\\Algorithms.cs",
   "PreviewInSolutionExplorer": false
 }
