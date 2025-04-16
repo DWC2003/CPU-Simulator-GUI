@@ -359,5 +359,10 @@ namespace CpuSchedulingWinForms
         {
             this.txtCodeInput.Clear();
         }
+
+        private void SRFS_Click(object sender, EventArgs e)
+        {
+            Algorithms.srtfAlgorithm(txtProcess.Text);
+        }
     }
 }
