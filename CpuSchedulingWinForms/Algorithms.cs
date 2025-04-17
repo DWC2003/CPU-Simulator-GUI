@@ -341,151 +341,28 @@ namespace CpuSchedulingWinForms
             }
         }
 
-        public static void srtfAlgorithm(String userInput)
+        public static void srtfAlgorithm(string userInput)
         {
             int np = Convert.ToInt16(userInput);
             int npX2 = np * 2;
-            int time = 0;
-            int[] porder = new int[np];
+
             double[] bp = new double[np];
-            double[] p = new double[np];
-            double[] ap = new double[np];
-            double[] wtp = new double[np];
-            string[] output1 = new string[npX2];
-            double twt = 0.0, awt;
-            int num, x;
 
             DialogResult result = MessageBox.Show("Shortest Remaining Time First ", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-            if (result == DialogResult.Yes)
-            {
-                for (num = 0; num < np - 1; num++)
-                {
-                    porder[num] = num;
-                }
-                for (num = 0; num <= np - 1; num++)
-                {
-                    //MessageBox.Show("Enter Burst time for P" + (num + 1) + ":", "Burst time for Process", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                    //Console.WriteLine("\nEnter Burst time for P" + (num + 1) + ":");
+       
+        }
 
-                    string input =
-                    Microsoft.VisualBasic.Interaction.InputBox("Enter Burst time: ",
-                                                       "Burst time for P" + (num + 1),
-                                                       "",
-                                                       -1, -1);
+        public static void hrrnAlgorithm(string userInput)
+        {
+            int np = Convert.ToInt16(userInput);
+            int npX2 = np * 2;
 
-                    bp[num] = Convert.ToInt64(input);
+            double[] bp = new double[np];
 
-                    string input2 =
-                    Microsoft.VisualBasic.Interaction.InputBox("Enter Arrival time: ",
-                                                                "Arrival time for P" + (num + 1),
-                                                                "",
-                                                                -1, -1);
-
-                    ap[num] = Convert.ToInt64(input2);
-                    //var input = Console.ReadLine();
-                    //bp[num] = Convert.ToInt32(input);
-                }
-
-                for (num = 0; num <= np - 1; num++)
-                {
-                    p[num] = bp[num];
-                }
-
-                for (num = 0; num <= np - 2; num++)
-                {
-                    for (x = 0; x <= np - 2; x++)
-                    {
-                        if (p[num] > p[num + 1])
-                        {
-                            double temp = p[num];
-                            p[num] = p[num + 1];
-                            p[num + 1] = temp;
-
-                            temp = ap[num];
-                            ap[num] = ap[num+1];
-                            ap[num+1] = temp;
-
-                            int temp2 = porder[num];
-                            porder[num] = porder[num+1];
-                            porder[num+1] = temp2;
-                        }
-                    }
-                }
-
-                while (p[0] > 0)
-                {
-                    time++;
-                    p[0]--;
+            DialogResult result = MessageBox.Show("Shortest Remaining Time First ", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
 
-                    for (num = 1; num <= np - 1; num++)
-                    {
-                        if (p[num] >= 0 && ap[num] <= time)
-                        {
-                            wtp[num]++;
-                        }
-                    }
-
-                    for (num = 1; num <= np - 1; num++)
-                    {
-                        if (p[0] < p[num] && ap[num] <= time)
-                        {
-                            double temp = p[0];
-                            p[0] = p[num];
-                            p[num] = temp;
-
-                            temp = ap[0];
-                            ap[0] = ap[num];
-                            ap[num] = temp;
-
-                            temp = wtp[0];
-                            wtp[0] = wtp[num];
-                            wtp[num] = temp;
-
-                            int temp2 = porder[0];
-                            porder[0] = porder[num];
-                            porder[num] = temp2;
-                        }
-                    }
-                }
-
-                for (x = 0; x <= np - 2; x++)
-                {
-                    for (num = 0; num <= np - 2; num++)
-                    {
-                        if (porder[num] > porder[num + 1])
-                        {
-                            int temp = porder[num];
-                            porder[num] = porder[num + 1];
-                            porder[num + 1] = temp;
-
-                            double temp2 = wtp[num];
-                            wtp[num] = wtp[num + 1];
-                            wtp[num + 1] = temp2;
-                        }
-                    }
-                }
-
-                for (num = 0; num <= np - 1; num++)
-                {
-                    MessageBox.Show("Waiting time for P" + (num + 1) + " = " + wtp[num], "Waiting time", MessageBoxButtons.OK, MessageBoxIcon.None);
-                }
-
-
-                for (num = 0; num <= np - 1; num++)
-                {
-                    twt = twt + wtp[num];
-                }
-                awt = twt / np;
-                MessageBox.Show("Average waiting time for " + np + " processes" + " = " + awt + " sec(s)", "Average Awaiting Time", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }
-            else if (result == DialogResult.No)
-            {
-                //this.Hide();
-                //Form1 frm = new Form1();
-                //frm.ShowDialog();
-            }
         }
     }
 }
