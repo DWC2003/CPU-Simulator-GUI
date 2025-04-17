@@ -65,6 +65,7 @@
             this.pictureBoxCodeOutput = new System.Windows.Forms.PictureBox();
             this.btnBarcode = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.randCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabSelection.SuspendLayout();
@@ -333,6 +334,7 @@
             this.cpuSchedulerTab.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cpuSchedulerTab.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpuSchedulerTab.BackgroundImage")));
             this.cpuSchedulerTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cpuSchedulerTab.Controls.Add(this.randCheckBox);
             this.cpuSchedulerTab.Controls.Add(this.HHRNbtn);
             this.cpuSchedulerTab.Controls.Add(this.SRFS);
             this.cpuSchedulerTab.Controls.Add(this.btnRoundRobin);
@@ -597,6 +599,16 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // randCheckBox
+            // 
+            this.randCheckBox.AutoSize = true;
+            this.randCheckBox.Location = new System.Drawing.Point(324, 183);
+            this.randCheckBox.Name = "randCheckBox";
+            this.randCheckBox.Size = new System.Drawing.Size(157, 26);
+            this.randCheckBox.TabIndex = 15;
+            this.randCheckBox.Text = "Random Data";
+            this.randCheckBox.UseVisualStyleBackColor = true;
+            // 
             // CpuScheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -666,5 +678,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button SRFS;
         private System.Windows.Forms.Button HHRNbtn;
+        private System.Windows.Forms.CheckBox randCheckBox;
     }
 }

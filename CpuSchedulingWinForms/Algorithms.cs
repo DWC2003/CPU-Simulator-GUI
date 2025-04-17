@@ -507,9 +507,6 @@ namespace CpuSchedulingWinForms
                             }
                         }
                     }
-                    
-                    
-                   
 
                     if (maxindex != -1)
                     {
