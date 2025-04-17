@@ -364,5 +364,10 @@ namespace CpuSchedulingWinForms
         {
             Algorithms.srtfAlgorithm(txtProcess.Text);
         }
+
+        private void HHRNbtn_Click(object sender, EventArgs e)
+        {
+            Algorithms.hrrnAlgorithm(txtProcess.Text);
+        }
     }
 }

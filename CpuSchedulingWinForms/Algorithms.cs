@@ -482,41 +482,43 @@ namespace CpuSchedulingWinForms
 
 
                 int completed = 0;
-                int minindex = -1;
+                int maxindex = -1;
                 int time = 0;
+
 
                 while (completed < np)
                 {
-                    double minburst = double.MaxValue;
-                    for (num = 0; num <= np - 1; num++)
+                    double maxratio = double.MinValue;
+                    if (maxindex == -1)
                     {
-                        if (p[num] < minburst && ap[num] <= time && p[num] != 0)
+                        for (num = 0; num <= np - 1; num++)
                         {
-                            minindex = num;
-                            minburst = p[num];
+                            if ((wtp[num] + p[num]) / (p[num]) > maxratio && ap[num] <= time && p[num] != 0)
+                            {
+                                maxratio = (wtp[num] + p[num]) / (p[num]);
+                                maxindex = num;
+                            }
+                            if ((wtp[num] + p[num]) / (p[num]) == maxratio && ap[num] <= time && p[num] != 0)
+                            {
+                                if (p[num] < p[maxindex])
+                                {
+                                    maxindex = num;
+                                }
+                            }
                         }
                     }
+                    
+                    
+                   
 
-                    for (num = 0; num <= np - 1; num++)
+                    if (maxindex != -1)
                     {
-                        if (ap[num] <= time && p[num] > 0 && num != minindex)
-                        {
-                            wtp[num]++;
-                        }
+                        wtp[maxindex] = time - ap[maxindex];
+                        time += (int)p[maxindex];
+                        p[maxindex] = 0;
+                        completed++;
+                        maxindex = -1;
                     }
-
-                    if (minindex != -1)
-                    {
-                        p[minindex]--;
-                        if (p[minindex] == 0)
-                        {
-                            completed++;
-                        }
-                    }
-
-
-
-                    time++;
                 }
 
 

@@ -369,6 +369,7 @@
             this.HHRNbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.HHRNbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.HHRNbtn.UseVisualStyleBackColor = false;
+            this.HHRNbtn.Click += new System.EventHandler(this.HHRNbtn_Click);
             // 
             // SRFS
             // 

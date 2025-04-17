@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\",
+  "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\repos\\CPU-Scheduling-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|c:\\users\\dwc11\\desktop\\school\\os\\project2\\cpuschedulingwinforms\\algorithms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|c:\\users\\hp\\desktop\\repos\\cpu-scheduling-project\\cpuschedulingwinforms\\algorithms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\algorithms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|C:\\Users\\HP\\Desktop\\repos\\CPU-Scheduling-Project\\cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|C:\\Users\\HP\\Desktop\\repos\\CPU-Scheduling-Project\\cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6954F540-2148-4D2F-879A-BE82576B1083}|CpuSchedulingWinForms\\CpuSchedulingWinForms.csproj|solutionrelative:cpuschedulingwinforms\\cpuscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -32,22 +32,23 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "CpuScheduler.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\CpuScheduler.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\repos\\CPU-Scheduling-Project\\CpuSchedulingWinForms\\CpuScheduler.cs",
               "RelativeDocumentMoniker": "CpuSchedulingWinForms\\CpuScheduler.cs",
-              "ToolTip": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\CpuScheduler.cs [Design]",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\repos\\CPU-Scheduling-Project\\CpuSchedulingWinForms\\CpuScheduler.cs [Design]",
               "RelativeToolTip": "CpuSchedulingWinForms\\CpuScheduler.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T01:42:04.128Z"
+              "WhenOpened": "2025-04-16T01:42:04.128Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Algorithms.cs",
-              "DocumentMoniker": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\Algorithms.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\repos\\CPU-Scheduling-Project\\CpuSchedulingWinForms\\Algorithms.cs",
               "RelativeDocumentMoniker": "CpuSchedulingWinForms\\Algorithms.cs",
-              "ToolTip": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\Algorithms.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\repos\\CPU-Scheduling-Project\\CpuSchedulingWinForms\\Algorithms.cs",
               "RelativeToolTip": "CpuSchedulingWinForms\\Algorithms.cs",
-              "ViewState": "AgIAAAACAAAAAAAAAAAgwCACAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMCAAAAAAAAAAAiwBACAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T01:36:59.287Z",
               "EditorCaption": ""
@@ -56,13 +57,14 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "CpuScheduler.cs",
-              "DocumentMoniker": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\CpuScheduler.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\repos\\CPU-Scheduling-Project\\CpuSchedulingWinForms\\CpuScheduler.cs",
               "RelativeDocumentMoniker": "CpuSchedulingWinForms\\CpuScheduler.cs",
-              "ToolTip": "C:\\Users\\dwc11\\Desktop\\School\\OS\\Project2\\CpuSchedulingWinForms\\CpuScheduler.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\repos\\CPU-Scheduling-Project\\CpuSchedulingWinForms\\CpuScheduler.cs",
               "RelativeToolTip": "CpuSchedulingWinForms\\CpuScheduler.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAowG0BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGEBAAAAAAAAAAAqwHQBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T00:11:31.335Z"
+              "WhenOpened": "2025-04-16T00:11:31.335Z",
+              "EditorCaption": ""
             }
           ]
         }
