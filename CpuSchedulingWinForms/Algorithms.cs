@@ -344,13 +344,99 @@ namespace CpuSchedulingWinForms
         public static void srtfAlgorithm(string userInput)
         {
             int np = Convert.ToInt16(userInput);
-            int npX2 = np * 2;
+            double[] ap = new double[np];
+            double[] p = new double[np];
+            double[] wtp = new double[np];
+            double twt = 0.0, awt;
+            int num;
 
-            double[] bp = new double[np];
+            DialogResult result = MessageBox.Show("Shortest Remaining Time First Scheduling ", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-            DialogResult result = MessageBox.Show("Shortest Remaining Time First ", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                for (num = 0; num <= np - 1; num++)
+                {
+                    //MessageBox.Show("Enter Burst time for P" + (num + 1) + ":", "Burst time for Process", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    //Console.WriteLine("\nEnter Burst time for P" + (num + 1) + ":");
 
-       
+                    string input =
+                    Microsoft.VisualBasic.Interaction.InputBox("Enter Burst time: ",
+                                                       "Burst time for P" + (num + 1),
+                                                       "",
+                                                       -1, -1);
+
+                    p[num] = Convert.ToInt64(input);
+
+                    string input2 =
+                    Microsoft.VisualBasic.Interaction.InputBox("Enter Burst time: ",
+                                                       "Burst time for P" + (num + 1),
+                                                       "",
+                                                       -1, -1);
+
+                    ap[num] = Convert.ToInt64(input2);
+
+                    //var input = Console.ReadLine();
+                    //bp[num] = Convert.ToInt32(input);
+                }
+
+
+                int completed = 0;
+                int minindex = -1;
+                int time = 0;
+
+                while (completed < np)
+                {
+                    double minburst = double.MaxValue;
+                    for (num = 0; num <= np - 1; num++)
+                    {
+                        if (p[num] < minburst && ap[num] <= time && p[num] != 0)
+                        {
+                            minindex = num;
+                            minburst = p[num];
+                        }
+                    }
+
+                    for (num = 0; num <= np - 1; num++)
+                    {
+                        if (ap[num] <= time && p[num] > 0 && num != minindex)
+                        {
+                            wtp[num]++;
+                        }
+                    }
+
+                    if (minindex != -1)
+                    {
+                        p[minindex]--;
+                        if (p[minindex] == 0)
+                        {
+                            completed++;
+                        }
+                    }
+
+
+
+                    time++;
+                }
+
+
+
+                for (num = 0; num <= np - 1; num++)
+                {
+                    MessageBox.Show("Waiting time for P" + (num + 1) + " = " + wtp[num], "Job Queue", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+                for (num = 0; num <= np - 1; num++)
+                {
+                    twt = twt + wtp[num];
+                }
+                awt = twt / np;
+                MessageBox.Show("Average waiting time for " + np + " processes" + " = " + awt + " sec(s)", "Average Awaiting Time", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else if (result == DialogResult.No)
+            {
+                //this.Hide();
+                //Form1 frm = new Form1();
+                //frm.ShowDialog();
+            }
         }
 
         public static void hrrnAlgorithm(string userInput)
