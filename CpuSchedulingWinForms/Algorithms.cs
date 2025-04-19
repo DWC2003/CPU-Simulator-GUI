@@ -349,6 +349,10 @@ namespace CpuSchedulingWinForms
             int np = Convert.ToInt16(userInput);
             double[] ap = new double[np];
             double[] p = new double[np];
+            double[] p2 = new double[np];
+
+            int activetime = 0;
+            double[] cop = new double[np];
             double[] wtp = new double[np];
             double twt = 0.0, awt;
             int num;
@@ -369,6 +373,8 @@ namespace CpuSchedulingWinForms
                                                        -1, -1);
 
                     p[num] = Convert.ToInt64(input);
+                    p2[num] = Convert.ToInt64(input);
+
 
                     string input2 =
                     Microsoft.VisualBasic.Interaction.InputBox("Enter Arrival time: ",
@@ -410,9 +416,11 @@ namespace CpuSchedulingWinForms
                     if (minindex != -1)
                     {
                         p[minindex]--;
+                        activetime++;
                         if (p[minindex] == 0)
                         {
                             completed++;
+                            cop[minindex] = time;
                         }
                     }
 
@@ -423,16 +431,186 @@ namespace CpuSchedulingWinForms
 
 
 
+                String summary = "";
+                String pdata = "";
+
                 for (num = 0; num <= np - 1; num++)
                 {
-                    MessageBox.Show("Waiting time for P" + (num + 1) + " = " + wtp[num], "Job Queue", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    pdata += "Process " + (num + 1) + " - Burst Time: " + p2[num] + " - Arrival Time: " + ap[num] + "\n";
                 }
+
+                MessageBox.Show(pdata, "Process Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                String waitdata = "";
+                for (num = 0; num <= np - 1; num++)
+                {
+                    waitdata += "Process " + (num + 1) + " - Wait Time: " + wtp[num] + "\n";
+                }
+
+
                 for (num = 0; num <= np - 1; num++)
                 {
                     twt = twt + wtp[num];
                 }
                 awt = twt / np;
-                MessageBox.Show("Average waiting time for " + np + " processes" + " = " + awt + " sec(s)", "Average Awaiting Time", MessageBoxButtons.OK, MessageBoxIcon.None);
+                waitdata += "Average Wait Time: " + awt;
+                summary += "Average Wait Time: " + awt + " (secs)\n";
+
+                MessageBox.Show(waitdata, "Wait Time Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                String turnarounddata = "";
+                double[] tap = new double[np];
+                for (num = 0; num <= np - 1; num++)
+                {
+                    tap[num] = cop[num] - ap[num];
+                    turnarounddata += "Process " + (num + 1) + " - Turnaround Time: " + tap[num] + "\n";
+                }
+
+                double ttt = 0;
+                for (num = 0; num <= np - 1; num++)
+                {
+                    ttt += tap[num];
+                }
+                ttt /= np;
+                turnarounddata += "Average Turnaround Time: " + ttt;
+                summary += "Average Turnaround Time: " + ttt + " (secs)\n";
+
+                MessageBox.Show(turnarounddata, "Turnaround Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                summary += "CPU Utilization: " + ((double)activetime / (double)time * 100) + "%\n";
+                summary += "Throughput: " + ((double)np / (double)time) + " processes per second\n";
+
+
+                MessageBox.Show(summary, "Summary", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else if (result == DialogResult.No)
+            {
+                //this.Hide();
+                //Form1 frm = new Form1();
+                //frm.ShowDialog();
+            }
+        }
+
+        public static void srtfRandAlgorithm(string userInput)
+        {
+            int np = Convert.ToInt16(userInput);
+            double[] ap = new double[np];
+            double[] p = new double[np];
+            double[] p2 = new double[np];
+            double[] cop = new double[np];
+            double[] wtp = new double[np];
+            double twt = 0.0, awt;
+            Random rnd = new Random();
+            int num;
+            int activetime = 0;
+
+            DialogResult result = MessageBox.Show("Shortest Remaining Time First Scheduling ", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                for (num = 0; num <= np - 1; num++)
+                {
+                    p[num] = rnd.Next(1, 11);
+                    ap[num] = rnd.Next(0, 11);
+                }
+
+                for (num = 0; num <= np - 1; num++)
+                {
+                    p2[num] = p[num];
+                }
+
+                int completed = 0;
+                int minindex = -1;
+                int time = 0;
+
+                while (completed < np)
+                {
+                    double minburst = double.MaxValue;
+                    for (num = 0; num <= np - 1; num++)
+                    {
+                        if (p[num] < minburst && ap[num] <= time && p[num] != 0)
+                        {
+                            minindex = num;
+                            minburst = p[num];
+                        }
+                    }
+
+                    for (num = 0; num <= np - 1; num++)
+                    {
+                        if (ap[num] <= time && p[num] > 0 && num != minindex)
+                        {
+                            wtp[num]++;
+                        }
+                    }
+
+                    if (minindex != -1)
+                    {
+                        p[minindex]--;
+                        activetime++;
+                        if (p[minindex] == 0)
+                        {
+                            completed++;
+                            cop[minindex] = time;
+                        }
+                    }
+
+
+
+                    time++;
+                }
+
+                String summary = "";
+                String pdata = "";
+
+                for (num = 0; num <= np - 1; num++)
+                {
+                    pdata += "Process " + (num + 1) + " - Burst Time: " + p2[num] + " - Arrival Time: " + ap[num] + "\n";
+                }
+
+                MessageBox.Show(pdata, "Process Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                String waitdata = "";
+                for (num = 0; num <= np - 1; num++)
+                {
+                    waitdata += "Process " + (num + 1) + " - Wait Time: " + wtp[num] + "\n";
+                }
+
+
+                for (num = 0; num <= np - 1; num++)
+                {
+                    twt = twt + wtp[num];
+                }
+                awt = twt / np;
+                waitdata += "Average Wait Time: " + awt;
+                summary += "Average Wait Time: " + awt + " (secs)\n";
+
+                MessageBox.Show(waitdata, "Wait Time Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                String turnarounddata = "";
+                double[] tap = new double[np];
+                for (num = 0; num <= np - 1; num++)
+                {
+                    tap[num] = cop[num] - ap[num];
+                    turnarounddata += "Process " + (num + 1) + " - Turnaround Time: " + tap[num] + "\n";
+                }
+
+                double ttt = 0;
+                for (num = 0; num <= np - 1; num++)
+                {
+                    ttt += tap[num];
+                }
+                ttt /= np;
+                turnarounddata += "Average Turnaround Time: " + ttt;
+                summary += "Average Turnaround Time: " + ttt + " (secs)\n";
+
+                MessageBox.Show(turnarounddata, "Turnaround Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                summary += "CPU Utilization: " + ((double)activetime / (double)time * 100) + "%\n";
+                summary += "Throughput: " + ((double)np / (double)time) + " processes per second\n";
+
+
+                MessageBox.Show(summary, "Summary", MessageBoxButtons.OK, MessageBoxIcon.None);
+
             }
             else if (result == DialogResult.No)
             {
@@ -447,7 +625,11 @@ namespace CpuSchedulingWinForms
             int np = Convert.ToInt16(userInput);
             double[] ap = new double[np];
             double[] p = new double[np];
+            double[] p2 = new double[np];
+            double[] cop = new double[np];
+
             double[] wtp = new double[np];
+            int activetime = 0;
             double twt = 0.0, awt;
             int num;
 
@@ -467,6 +649,8 @@ namespace CpuSchedulingWinForms
                                                        -1, -1);
 
                     p[num] = Convert.ToInt64(input);
+                    p2[num] = Convert.ToInt64(input);
+
 
                     string input2 =
                     Microsoft.VisualBasic.Interaction.InputBox("Enter Arrival time: ",
@@ -489,16 +673,18 @@ namespace CpuSchedulingWinForms
                 while (completed < np)
                 {
                     double maxratio = double.MinValue;
+                    double rr = 0.0;
                     if (maxindex == -1)
                     {
                         for (num = 0; num <= np - 1; num++)
                         {
-                            if ((wtp[num] + p[num]) / (p[num]) > maxratio && ap[num] <= time && p[num] != 0)
+                            rr = ((time - ap[num]) + p[num]) / (p[num]);
+                            if (rr > maxratio && ap[num] <= time && p[num] != 0)
                             {
-                                maxratio = (wtp[num] + p[num]) / (p[num]);
+                                maxratio = rr;
                                 maxindex = num;
                             }
-                            if ((wtp[num] + p[num]) / (p[num]) == maxratio && ap[num] <= time && p[num] != 0)
+                            else if (rr == maxratio && ap[num] <= time && p[num] != 0)
                             {
                                 if (p[num] < p[maxindex])
                                 {
@@ -512,15 +698,76 @@ namespace CpuSchedulingWinForms
                     {
                         wtp[maxindex] = time - ap[maxindex];
                         time += (int)p[maxindex];
+                        cop[maxindex] = time;
+                        activetime += (int)p[maxindex];
                         p[maxindex] = 0;
                         completed++;
                         maxindex = -1;
                     }
+                    else
+                    {
+                        time++;
+                    }
+                }
+
+                String summary = "";
+                String pdata = "";
+
+                for (num = 0; num <= np - 1; num++)
+                {
+                    pdata += "Process " + (num + 1) + " - Burst Time: " + p2[num] + " - Arrival Time: " + ap[num] + "\n";
+                }
+
+                MessageBox.Show(pdata, "Process Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                String waitdata = "";
+                for (num = 0; num <= np - 1; num++)
+                {
+                    waitdata += "Process " + (num + 1) + " - Wait Time: " + wtp[num] + "\n";
                 }
 
 
-
                 for (num = 0; num <= np - 1; num++)
+                {
+                    twt = twt + wtp[num];
+                }
+                awt = twt / np;
+                waitdata += "Average Wait Time: " + awt;
+                summary += "Average Wait Time: " + awt + " (secs)\n";
+
+                MessageBox.Show(waitdata, "Wait Time Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                String turnarounddata = "";
+                double[] tap = new double[np];
+                for (num = 0; num <= np - 1; num++)
+                {
+                    tap[num] = cop[num] - ap[num];
+                    turnarounddata += "Process " + (num + 1) + " - Turnaround Time: " + tap[num] + "\n";
+                }
+
+                double ttt = 0;
+                for (num = 0; num <= np - 1; num++)
+                {
+                    ttt += tap[num];
+                }
+                ttt /= np;
+                turnarounddata += "Average Turnaround Time: " + ttt;
+                summary += "Average Turnaround Time: " + ttt + " (secs)\n";
+
+                MessageBox.Show(turnarounddata, "Turnaround Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                summary += "CPU Utilization: " + ((double)activetime / (double)time * 100) + "%\n";
+                summary += "Throughput: " + ((double)np / (double)time) + " processes per second\n";
+
+
+                MessageBox.Show(summary, "Summary", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+
+
+
+
+
+                /*for (num = 0; num <= np - 1; num++)
                 {
                     MessageBox.Show("Waiting time for P" + (num + 1) + " = " + wtp[num], "Job Queue", MessageBoxButtons.OK, MessageBoxIcon.None);
                 }
@@ -529,7 +776,144 @@ namespace CpuSchedulingWinForms
                     twt = twt + wtp[num];
                 }
                 awt = twt / np;
-                MessageBox.Show("Average waiting time for " + np + " processes" + " = " + awt + " sec(s)", "Average Awaiting Time", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Average waiting time for " + np + " processes" + " = " + awt + " sec(s)", "Average Awaiting Time", MessageBoxButtons.OK, MessageBoxIcon.None);*/
+            }
+            else if (result == DialogResult.No)
+            {
+                //this.Hide();
+                //Form1 frm = new Form1();
+                //frm.ShowDialog();
+            }
+        }
+
+        public static void hrrnRandAlgorithm(string userInput)
+        {
+            int np = Convert.ToInt16(userInput);
+            Random rnd = new Random();
+            double[] ap = new double[np];
+            double[] p = new double[np];
+            double[] p2 = new double[np];
+            double[] cop = new double[np];
+            int activetime = 0;
+
+            double[] wtp = new double[np];
+            double twt = 0.0, awt;
+            int num;
+
+            DialogResult result = MessageBox.Show("Highest Response Ratio Next ", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                for (num = 0; num <= np - 1; num++)
+                {
+                    p[num] = rnd.Next(1, 11);
+                    ap[num] = rnd.Next(0, 11);
+                }
+
+                for (num = 0; num <= np - 1; num++)
+                {
+                    p2[num] = p[num];
+                }
+
+
+                int completed = 0;
+                int maxindex = -1;
+                int time = 0;
+
+
+                while (completed < np)
+                {
+                    double maxratio = double.MinValue;
+                    double rr = 0.0;
+                    if (maxindex == -1)
+                    {
+                        for (num = 0; num <= np - 1; num++)
+                        {
+                            rr = ((time - ap[num]) + p[num]) / (p[num]);
+                            if (rr > maxratio && ap[num] <= time && p[num] != 0)
+                            {
+                                maxratio = rr;
+                                maxindex = num;
+                            }
+                            else if (rr == maxratio && ap[num] <= time && p[num] != 0)
+                            {
+                                if (p[num] < p[maxindex])
+                                {
+                                    maxindex = num;
+                                }
+                            }
+                        }
+                    }
+
+                    if (maxindex != -1)
+                    {
+                        wtp[maxindex] = time - ap[maxindex];
+                        time += (int)p[maxindex];
+                        cop[maxindex] = time;
+                        activetime += (int)p[maxindex];
+                        p[maxindex] = 0;
+                        completed++;
+                        maxindex = -1;
+                    }
+                    else
+                    {
+                        time++;
+                    }
+                }
+
+
+
+                String summary = "";
+                String pdata = "";
+
+                for (num = 0; num <= np - 1; num++)
+                {
+                    pdata += "Process " + (num + 1) + " - Burst Time: " + p2[num] + " - Arrival Time: " + ap[num] + "\n";
+                }
+
+                MessageBox.Show(pdata, "Process Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                String waitdata = "";
+                for (num = 0; num <= np - 1; num++)
+                {
+                    waitdata += "Process " + (num + 1) + " - Wait Time: " + wtp[num] + "\n";
+                }
+
+
+                for (num = 0; num <= np - 1; num++)
+                {
+                    twt = twt + wtp[num];
+                }
+                awt = twt / np;
+                waitdata += "Average Wait Time: " + awt;
+                summary += "Average Wait Time: " + awt + " (secs)\n";
+
+                MessageBox.Show(waitdata, "Wait Time Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                String turnarounddata = "";
+                double[] tap = new double[np];
+                for (num = 0; num <= np - 1; num++)
+                {
+                    tap[num] = cop[num] - ap[num];
+                    turnarounddata += "Process " + (num + 1) + " - Turnaround Time: " + tap[num] + "\n";
+                }
+
+                double ttt = 0;
+                for (num = 0; num <= np - 1; num++)
+                {
+                    ttt += tap[num];
+                }
+                ttt /= np;
+                turnarounddata += "Average Turnaround Time: " + ttt;
+                summary += "Average Turnaround Time: " + ttt + " (secs)\n";
+
+                MessageBox.Show(turnarounddata, "Turnaround Data", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                summary += "CPU Utilization: " + ((double)activetime / (double)time * 100) + "%\n";
+                summary += "Throughput: " + ((double)np / (double)time) + " processes per second\n";
+
+
+                MessageBox.Show(summary, "Summary", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             else if (result == DialogResult.No)
             {

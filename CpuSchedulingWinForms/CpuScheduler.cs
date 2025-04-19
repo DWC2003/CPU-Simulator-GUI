@@ -364,7 +364,14 @@ namespace CpuSchedulingWinForms
         {
             if (txtProcess.Text != "")
             {
-                Algorithms.srtfAlgorithm(txtProcess.Text);
+                if (randCheckBox.Checked)
+                {
+                    Algorithms.srtfRandAlgorithm(txtProcess.Text);
+                }
+                else
+                {
+                    Algorithms.srtfAlgorithm(txtProcess.Text);
+                }
                 int numberOfProcess = Int16.Parse(txtProcess.Text);
                 if (numberOfProcess <= 10)
                 {
@@ -409,7 +416,14 @@ namespace CpuSchedulingWinForms
         {
             if (txtProcess.Text != "")
             {
-                Algorithms.hrrnAlgorithm(txtProcess.Text);
+                if (randCheckBox.Checked)
+                {
+                    Algorithms.hrrnRandAlgorithm(txtProcess.Text);
+                }
+                else
+                {
+                    Algorithms.hrrnAlgorithm(txtProcess.Text);
+                }
                 int numberOfProcess = Int16.Parse(txtProcess.Text);
                 if (numberOfProcess <= 10)
                 {
