@@ -207,7 +207,7 @@
             this.dashBoardTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashBoardTab.Location = new System.Drawing.Point(4, 22);
             this.dashBoardTab.Name = "dashBoardTab";
-            this.dashBoardTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.dashBoardTab.Padding = new System.Windows.Forms.Padding(3);
             this.dashBoardTab.Size = new System.Drawing.Size(501, 413);
             this.dashBoardTab.TabIndex = 0;
             this.dashBoardTab.Text = "Dashboard";
@@ -329,7 +329,7 @@
             this.cpuSchedulerTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cpuSchedulerTab.Location = new System.Drawing.Point(4, 22);
             this.cpuSchedulerTab.Name = "cpuSchedulerTab";
-            this.cpuSchedulerTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.cpuSchedulerTab.Padding = new System.Windows.Forms.Padding(3);
             this.cpuSchedulerTab.Size = new System.Drawing.Size(501, 413);
             this.cpuSchedulerTab.TabIndex = 1;
             this.cpuSchedulerTab.Text = "CPU Scheduler";
@@ -338,11 +338,11 @@
             // 
             this.randCheckBox.AutoSize = true;
             this.randCheckBox.Location = new System.Drawing.Point(216, 119);
-            this.randCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.randCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.randCheckBox.Name = "randCheckBox";
-            this.randCheckBox.Size = new System.Drawing.Size(235, 19);
+            this.randCheckBox.Size = new System.Drawing.Size(114, 19);
             this.randCheckBox.TabIndex = 15;
-            this.randCheckBox.Text = "Random Data (SRTF and HRRN)";
+            this.randCheckBox.Text = "Random Data";
             this.randCheckBox.UseVisualStyleBackColor = true;
             // 
             // HHRNbtn

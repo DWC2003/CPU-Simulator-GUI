@@ -23,7 +23,7 @@ namespace CpuSchedulingWinForms
         {
             if (txtProcess.Text != "")
             {
-                Algorithms.fcfsAlgorithm(txtProcess.Text);
+                Algorithms.fcfsAlgorithm(txtProcess.Text, true);
             }
             else
             {
@@ -44,7 +44,7 @@ namespace CpuSchedulingWinForms
         {
             if (txtProcess.Text != "")
             {
-                Algorithms.sjfAlgorithm(txtProcess.Text);
+                Algorithms.sjfAlgorithm(txtProcess.Text, true);
             }
             else
             {
@@ -57,7 +57,7 @@ namespace CpuSchedulingWinForms
         {
             if (txtProcess.Text != "")
             {
-                Algorithms.priorityAlgorithm(txtProcess.Text);
+                Algorithms.priorityAlgorithm(txtProcess.Text, true);
             } else
             {
                 MessageBox.Show("Enter number of processes", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
