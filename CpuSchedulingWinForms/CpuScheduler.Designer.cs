@@ -337,7 +337,7 @@
             // randCheckBox
             // 
             this.randCheckBox.AutoSize = true;
-            this.randCheckBox.Location = new System.Drawing.Point(216, 119);
+            this.randCheckBox.Location = new System.Drawing.Point(63, 119);
             this.randCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.randCheckBox.Name = "randCheckBox";
             this.randCheckBox.Size = new System.Drawing.Size(114, 19);

@@ -35,8 +35,8 @@ namespace CpuSchedulingWinForms
                 {
                     for (num = 0; num <= np - 1; num++)
                     {
-                        p[num] = rnd.Next(1, 11);
-                        ap[num] = rnd.Next(0, 11);
+                        p[num] = rnd.Next(1, 26);
+                        ap[num] = rnd.Next(0, 51);
                     }
 
                     for (num = 0; num <= np - 1; num++)
@@ -226,8 +226,8 @@ namespace CpuSchedulingWinForms
                 {
                     for (num = 0; num <= np - 1; num++)
                     {
-                        bp[num] = rnd.Next(1, 11);
-                        ap[num] = rnd.Next(0, 11);
+                        bp[num] = rnd.Next(1, 26);
+                        ap[num] = rnd.Next(0, 51);
                     }
                 }
                 else
@@ -290,7 +290,7 @@ namespace CpuSchedulingWinForms
                         }
                         for (x = 0; x <= np - 1; x++)
                         {
-                            if (p[num] == bp[x] && ap2[num] == ap[x] && found == false)
+                            if (p[num] == bp[x] && ap[num] == ap2[x] && found == false)
                             {
                                 wtp[x] = time - ap[num];
                                 time += (int)bp[x];
@@ -300,8 +300,13 @@ namespace CpuSchedulingWinForms
                                 bp[x] = 0;
                                 found = true;
                                 ready = true;
-
+                                break;
                             }
+                        }
+                        if (found)
+                        {
+                            found = false;
+                            break;
                         }
                         found = false;
                     }
@@ -397,9 +402,9 @@ namespace CpuSchedulingWinForms
                 {
                     for (num = 0; num <= np - 1; num++)
                     {
-                        bp[num] = rnd.Next(1, 11);
-                        ap[num] = rnd.Next(0, 11);
-                        p[num] = rnd.Next(1, 11);
+                        bp[num] = rnd.Next(1, 26);
+                        ap[num] = rnd.Next(0, 51);
+                        p[num] = rnd.Next(1, 16);
                     }
                 }
                 else
@@ -564,7 +569,7 @@ namespace CpuSchedulingWinForms
 
         public static void roundRobinAlgorithm(string userInput, bool rand)
         {
-            int np = Convert.ToInt16(userInput);
+            int np = Convert.ToInt32(userInput);
             int i, counter = 0;
             double total = 0.0;
             Random rnd = new Random();
@@ -573,9 +578,9 @@ namespace CpuSchedulingWinForms
             double[] tap = new double[np];
             double waitTime = 0, turnaroundTime = 0;
             double averageWaitTime, averageTurnaroundTime;
-            double[] arrivalTime = new double[10];
-            double[] burstTime = new double[10];
-            double[] temp = new double[10];
+            double[] arrivalTime = new double[np];
+            double[] burstTime = new double[np];
+            double[] temp = new double[np];
             int x = np;
 
             DialogResult result = MessageBox.Show("Round Robin Scheduling", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -586,8 +591,8 @@ namespace CpuSchedulingWinForms
                 {
                     for (i = 0; i < np; i++)
                     {
-                        burstTime[i] = rnd.Next(1, 11);
-                        arrivalTime[i] = rnd.Next(0, 11);
+                        burstTime[i] = rnd.Next(1, 26);
+                        arrivalTime[i] = rnd.Next(0, 51);
                         temp[i] = burstTime[i];
                     }
                     timeQuantum = rnd.Next(1, 5);
@@ -754,8 +759,8 @@ namespace CpuSchedulingWinForms
                 {
                     for (num = 0; num <= np - 1; num++)
                     {
-                        p[num] = rnd.Next(1, 11);
-                        ap[num] = rnd.Next(0, 11);
+                        p[num] = rnd.Next(1, 26);
+                        ap[num] = rnd.Next(0, 51);
                     }
 
                     for (num = 0; num <= np - 1; num++)
@@ -920,8 +925,8 @@ namespace CpuSchedulingWinForms
                 {
                     for (num = 0; num <= np - 1; num++)
                     {
-                        p[num] = rnd.Next(1, 11);
-                        ap[num] = rnd.Next(0, 11);
+                        p[num] = rnd.Next(1, 26);
+                        ap[num] = rnd.Next(0, 51);
                     }
 
                     for (num = 0; num <= np - 1; num++)
