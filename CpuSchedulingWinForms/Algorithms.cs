@@ -691,8 +691,6 @@ namespace CpuSchedulingWinForms
                 //MessageBox.Show("Average wait time for " + np + " processes: " + averageWaitTime + " sec(s)", "", MessageBoxButtons.OK);
                 //MessageBox.Show("Average turnaround time for " + np + " processes: " + averageTurnaroundTime + " sec(s)", "", MessageBoxButtons.OK);
 
-
-
                 String summary = "";
                 String pdata = "";
 
@@ -772,9 +770,6 @@ namespace CpuSchedulingWinForms
                 {
                     for (num = 0; num <= np - 1; num++)
                     {
-                        //MessageBox.Show("Enter Burst time for P" + (num + 1) + ":", "Burst time for Process", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                        //Console.WriteLine("\nEnter Burst time for P" + (num + 1) + ":");
-
                         string input =
                         Microsoft.VisualBasic.Interaction.InputBox("Enter Burst time: ",
                                                            "Burst time for P" + (num + 1),
@@ -792,9 +787,6 @@ namespace CpuSchedulingWinForms
                                                            -1, -1);
 
                         ap[num] = Convert.ToInt64(input2);
-
-                        //var input = Console.ReadLine();
-                        //bp[num] = Convert.ToInt32(input);
                     }
                 }
                 
@@ -938,8 +930,6 @@ namespace CpuSchedulingWinForms
                 {
                     for (num = 0; num <= np - 1; num++)
                     {
-                        //MessageBox.Show("Enter Burst time for P" + (num + 1) + ":", "Burst time for Process", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                        //Console.WriteLine("\nEnter Burst time for P" + (num + 1) + ":");
 
                         string input =
                         Microsoft.VisualBasic.Interaction.InputBox("Enter Burst time: ",
@@ -958,9 +948,6 @@ namespace CpuSchedulingWinForms
                                                            -1, -1);
 
                         ap[num] = Convert.ToInt64(input2);
-
-                        //var input = Console.ReadLine();
-                        //bp[num] = Convert.ToInt32(input);
                     }
                 }
                 
@@ -1063,21 +1050,6 @@ namespace CpuSchedulingWinForms
 
                 MessageBox.Show(summary, "Summary", MessageBoxButtons.OK, MessageBoxIcon.None);
 
-
-
-
-
-
-                /*for (num = 0; num <= np - 1; num++)
-                {
-                    MessageBox.Show("Waiting time for P" + (num + 1) + " = " + wtp[num], "Job Queue", MessageBoxButtons.OK, MessageBoxIcon.None);
-                }
-                for (num = 0; num <= np - 1; num++)
-                {
-                    twt = twt + wtp[num];
-                }
-                awt = twt / np;
-                MessageBox.Show("Average waiting time for " + np + " processes" + " = " + awt + " sec(s)", "Average Awaiting Time", MessageBoxButtons.OK, MessageBoxIcon.None);*/
             }
             else if (result == DialogResult.No)
             {
