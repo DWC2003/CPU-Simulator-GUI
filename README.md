@@ -1,3 +1,5 @@
+** READ ME FOR CPU SCHEDULING SIMULATOR **
+
 This project is a fork of a project by Francis Nweke which simulates different CPU scheduling algorithms.
 
 This fork implements two new algorithms: Shortest Remaining Time First and Highest Response Ratio Next. These new algorithms have their own buttons as well on the GUI. It also implements a "Random Data" checkbox to create processes with random numbers instead of manually entering them one by one.
